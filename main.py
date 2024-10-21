@@ -1,5 +1,12 @@
-file = open("./books/frankenstein.txt")
+book_path = 'books/frankenstein.txt'
+
+file = open(book_path)
 content = file.read()
+
+def main():
+  total_words = count_word(content)
+  character_dict = count_character(content)
+  print_report(character_dict, total_words)
 
 def count_word(content):
   words = content.split()
@@ -28,7 +35,5 @@ def print_report(character_dict, word_count):
   
   print("--- End report ---")
 
-word_count = count_word(content)
-character_count_dict = count_character(content)
 
-print_report(character_count_dict, word_count)
+main()
